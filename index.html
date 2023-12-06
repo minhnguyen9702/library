@@ -9,8 +9,11 @@
 </head>
 
 <body>
-    <h1>Minh's Library</h1>
-    <div id="form">
+    <header>
+        <h1>Minh's Library</h1>
+        <p>This is my version of the <a href="https://www.theodinproject.com/">Odin Project's</a> library project.</p>
+    </header>
+    <div>
         <ul>
             <li>
                 <label for="title">Title</label>
@@ -24,21 +27,21 @@
                 <label for="pages">Pages</label>
                 <input type="number" id="pages" name="pages" placeholder=" ">
             </li>
-            <li>
+        </ul>
+        <div id="form">
+            <div>
                 <label for="isRead">Have you read this book?</label>
                 <input type="checkbox" id="isRead" name="isRead">
-            </li>
-            <li>
-                <button id="addBook">Add Book</button>
-            </li>
-        </ul>
+            </div>
+            <button id="addBook">Add Book</button>
+        </div>
     </div>
     <table id="bookTableHeader">
         <tr>
             <th>Title</th>
             <th>Author</th>
             <th>Pages</th>
-            <th id="readColumn">Read?</th>
+            <th id="readColumn">Status</th>
         </tr>
     </table>
     <table id="bookTableBody">

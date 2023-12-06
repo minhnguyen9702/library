@@ -1,16 +1,80 @@
+html {
+    font-family:  sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    margin-left: 15vw;
+    margin-right: 15vw;
+}
+
+li {
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+input[type=text], input[type=number] {
+    width: 15vw;
+    padding: 0.5em;
+    box-sizing: border-box;
+}
+
+#form {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    font-size: 1em;
+    padding: 0.5em;
+    border-radius: 1em;
+}
+
+#addBook {
+    margin: 1em;
+    padding: 1em;
+    background-color: lightblue;
+}
+
+#addBook:hover {
+    background-color: rgb(140, 226, 255);
+}
+
+#addBook:active {
+    background-color: lightskyblue;
+}
+
 table {
     border-collapse: collapse;
+    margin-left: 15vw;
+    margin-right: 15vw;
 }
 
 th, td {
-    width: 14vw;
+    width: 20vw;
+    height: 3em;
     text-align: center;
 }
 
 #readColumn {
-    width: 28vw;
+    width: 40vw;
 }
 
 td {
-    border: 1px solid;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-color: darkgrey;
 }

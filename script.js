@@ -42,7 +42,7 @@ function displayReadValue(isRead) {
     if (isRead == true) {
         return "Read";
     } else {
-        return "Haven't Read";
+        return "Not Read";
     }
 }
 
