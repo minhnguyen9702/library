@@ -51,6 +51,7 @@ function displayBooks() {
     }
 
     addStatusButtonListeners();
+    addDeleteButtonListeners();
 }
 
 function addStatusButtonListeners() {
@@ -66,6 +67,17 @@ function addStatusButtonListeners() {
 
 function toggleReadStatus(index) {
     myLibrary[index].isRead = !myLibrary[index].isRead;
+}
+
+function addDeleteButtonListeners() {
+    const deleteButtons = document.querySelectorAll(".deleteButton");
+    for (const deleteButton of deleteButtons) {
+        deleteButton.addEventListener("click", function() {
+            const index = this.getAttribute('data-index');
+            myLibrary.splice(index, 1);
+            displayBooks();
+        });
+    }
 }
 
 $addBook.addEventListener("click", addBookToLibrary);
