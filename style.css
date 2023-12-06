@@ -1,4 +1,16 @@
-td {
+table {
+    border-collapse: collapse;
+}
+
+th, td {
     width: 14vw;
+    text-align: center;
+}
+
+#readColumn {
+    width: 28vw;
+}
+
+td {
     border: 1px solid;
 }

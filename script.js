@@ -14,15 +14,29 @@ function Book(title, author, pages, isRead) {
     this.isRead = isRead;
 }
 
-function addBookToLibrary() {
-    let title = $titleInput.value;
-    let author = $authorInput.value;
-    let pages = $pagesInput.value;
-    let isRead = $isRead.checked;
-    let newBook = new Book(title, author, pages, isRead);
-    myLibrary.push(newBook);
-    displayBooks();
+function validateForm() {
+    if ($titleInput.value == "" || $authorInput.value == "" || $pagesInput.value == "") {
+        return false;
+    } else {
+        return true;
+    }
 }
+
+function addBookToLibrary() {
+    if (validateForm() == true) {
+        let title = $titleInput.value;
+        let author = $authorInput.value;
+        let pages = $pagesInput.value;
+        let isRead = $isRead.checked;
+        let newBook = new Book(title, author, pages, isRead);
+        myLibrary.push(newBook);
+        displayBooks();
+    } else {
+        alert("Please fill in all of the fields before adding a book.")
+        return;
+    }
+}
+
 
 function displayReadValue(isRead) {
     if (isRead == true) {
