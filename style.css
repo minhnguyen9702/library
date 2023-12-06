@@ -57,6 +57,18 @@ button {
     background-color: lightskyblue;
 }
 
+.deleteButton {
+    background-color: pink;
+}
+
+.deleteButton:hover {
+    background-color: rgb(255, 221, 227);
+}
+
+.deleteButton:active {
+    background-color: rgb(255, 98, 125);
+}
+
 table {
     border-collapse: collapse;
     margin-left: 15vw;

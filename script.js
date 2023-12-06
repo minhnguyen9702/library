@@ -22,6 +22,12 @@ function validateForm() {
     }
 }
 
+function clearForm() {
+    $titleInput.value = "";
+    $authorInput.value = "";
+    $pagesInput.value = "";
+}
+
 function addBookToLibrary() {
     if (validateForm() == true) {
         let title = $titleInput.value;
@@ -30,6 +36,7 @@ function addBookToLibrary() {
         let isRead = $isRead.checked;
         let newBook = new Book(title, author, pages, isRead);
         myLibrary.push(newBook);
+        clearForm();
         displayBooks();
     } else {
         alert("Please fill in all of the fields before adding a book.")
