@@ -49,6 +49,23 @@ function displayBooks() {
         </tr>`;
         $table.innerHTML += htmlBook;
     }
+
+    addStatusButtonListeners();
+}
+
+function addStatusButtonListeners() {
+    const statusButtons = document.querySelectorAll(".statusButton");
+    for (const statusButton of statusButtons) {
+        statusButton.addEventListener("click", function() {
+            const index = this.getAttribute('data-index');
+            toggleReadStatus(index);
+            displayBooks();
+        });
+    }
+}
+
+function toggleReadStatus(index) {
+    myLibrary[index].isRead = !myLibrary[index].isRead;
 }
 
 $addBook.addEventListener("click", addBookToLibrary);
