@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <div id="inputs">
+    <div id="form">
         <ul>
             <li>
                 <label for="title">Title</label>
@@ -24,7 +24,7 @@
                 <input type="number" id="pages" name="pages" placeholder=" ">
             </li>
             <li>
-                <label for="isRead">Pages</label>
+                <label for="isRead">Have you read this book?</label>
                 <input type="checkbox" id="isRead" name="isRead">
             </li>
             <li>
@@ -32,6 +32,16 @@
             </li>
         </ul>
     </div>
+    <table id="bookTableHeader">
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Pages</th>
+            <th>Read?</th>
+        </tr>
+    </table>
+    <table id="bookTableBody">
+    </table>
     <script src="script.js"></script>
 </body>
 

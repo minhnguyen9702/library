@@ -1,10 +1,11 @@
-const myLibrary = [];
+const myLibrary = [new Book("Game of Thrones", "George RR. Martin", "100", true)];
 
-let $titleInput = document.querySelector("#title");
-let $authorInput = document.querySelector("#author");
-let $pagesInput = document.querySelector("#pages");
-let $isRead = document.querySelector("#isRead"); 
-let addBook = document.querySelector("#addBook");
+const $titleInput = document.querySelector("#title");
+const $authorInput = document.querySelector("#author");
+const $pagesInput = document.querySelector("#pages");
+const $isRead = document.querySelector("#isRead"); 
+const $addBook = document.querySelector("#addBook");
+const $table = document.querySelector("#bookTableBody")
 
 function Book(title, author, pages, isRead) {
     this.title = title;
@@ -14,11 +15,41 @@ function Book(title, author, pages, isRead) {
 }
 
 function addBookToLibrary() {
-    // do stuff here
     let title = $titleInput.value;
     let author = $authorInput.value;
     let pages = $pagesInput.value;
-    let isRead = getReadValue();
-    let newBook = new Book()
+    let isRead = $isRead.checked;
+    let newBook = new Book(title, author, pages, isRead);
     myLibrary.push(newBook);
+    displayBooks();
 }
+
+function displayReadValue(isRead) {
+    if (isRead == true) {
+        return "Read";
+    } else {
+        return "Haven't Read";
+    }
+}
+
+function clearTable() {
+    $table.innerHTML = ""
+}
+
+function displayBooks() {
+    clearTable();
+    for(let i = 0; i< myLibrary.length; i++) {
+        const htmlBook =`
+        <tr>
+            <td>${myLibrary[i].title}</td>
+            <td>${myLibrary[i].author}</td>
+            <td>${myLibrary[i].pages}</td>
+            <td><button class="statusButton" data-index="${i}">${displayReadValue(myLibrary[i].isRead)}</button></td>
+            <td><button class="deleteButton" data-index="${i}">Delete</button></td>
+        </tr>`;
+        $table.innerHTML += htmlBook;
+    }
+}
+
+$addBook.addEventListener("click", addBookToLibrary);
+displayBooks();
