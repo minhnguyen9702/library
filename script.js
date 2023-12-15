@@ -1,3 +1,24 @@
+class Book {
+    constructor(title, author, pages, isRead) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.isRead = isRead;
+    }
+
+    getTitle() {
+        return this.title;
+    }
+
+    getAuthor() {
+        return this.author;
+    }
+
+    getPages() {
+        return this.pages;
+    }
+}
+
 const myLibrary = [new Book("Game of Thrones", "George RR. Martin", "100", true)];
 
 const $titleInput = document.querySelector("#title");
@@ -6,13 +27,6 @@ const $pagesInput = document.querySelector("#pages");
 const $isRead = document.querySelector("#isRead"); 
 const $addBook = document.querySelector("#addBook");
 const $table = document.querySelector("#bookTableBody")
-
-function Book(title, author, pages, isRead) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.isRead = isRead;
-}
 
 function validateForm() {
     if ($titleInput.value == "" || $authorInput.value == "" || $pagesInput.value == "") {
@@ -62,9 +76,9 @@ function displayBooks() {
     for(let i = 0; i< myLibrary.length; i++) {
         const htmlBook =`
         <tr>
-            <td>${myLibrary[i].title}</td>
-            <td>${myLibrary[i].author}</td>
-            <td>${myLibrary[i].pages}</td>
+            <td>${myLibrary[i].getPages()}</td>
+            <td>${myLibrary[i].getAuthor()}</td>
+            <td>${myLibrary[i].getPages()}</td>
             <td><button class="statusButton" data-index="${i}">${displayReadValue(myLibrary[i].isRead)}</button></td>
             <td><button class="deleteButton" data-index="${i}">Delete</button></td>
         </tr>`;
