@@ -76,7 +76,7 @@ function displayBooks() {
     for(let i = 0; i< myLibrary.length; i++) {
         const htmlBook =`
         <tr>
-            <td>${myLibrary[i].getPages()}</td>
+            <td>${myLibrary[i].getTitle()}</td>
             <td>${myLibrary[i].getAuthor()}</td>
             <td>${myLibrary[i].getPages()}</td>
             <td><button class="statusButton" data-index="${i}">${displayReadValue(myLibrary[i].isRead)}</button></td>
